@@ -1,4 +1,6 @@
 # @fishfishfishthebot
+# run the code before starting
+# type /start to start
 
 import telebot
 from telebot import types
