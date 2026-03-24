@@ -9,4 +9,4 @@ to begin using the telegram bot you must follow these steps:
 
 -choose any of the options that appear on the bottom
 
-always expect some bugs to occur
+Note that your stats reset when you restart the bot, also always expect some bugs to occur
