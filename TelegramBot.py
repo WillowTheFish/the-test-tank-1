@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 import random
 
-TOKEN = "placeholder"
+TOKEN = "8690617110:AAGyQBoSdM_n-k3RcdjT8kGOTKceN39XzfU"
 
 bot = telebot.TeleBot(TOKEN)
 
