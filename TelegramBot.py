@@ -2,9 +2,13 @@ import telebot
 from telebot import types
 import random
 
+# bot variables
+
 TOKEN = "8690617110:AAGyQBoSdM_n-k3RcdjT8kGOTKceN39XzfU"
 
 bot = telebot.TeleBot(TOKEN)
+
+# main variables
 
 choices = ["Rock", "Paper", "Scissors"]
 scores = {}
@@ -31,6 +35,8 @@ duelRoom = {
     "players": [],
     "choices": {}
 }
+
+# startup
 
 def rpsKeyboard():
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -61,9 +67,13 @@ def start(message):
         reply_markup=startKeyboard()
     )
 
+# math quiz
+
 @bot.message_handler(func= lambda message: message.text == "math quiz")
 def secret(message):
     bot.send_message(message.chat.id, "work in progress", reply_markup=startKeyboard())
+
+# rock paper scissors
 
 @bot.message_handler(func= lambda message: message.text == "rock paper scissors")
 def rpsStart(message):
@@ -94,6 +104,8 @@ def showScore(message):
             f"win streak: {streak}"
 
         )
+
+# rock paper scissors multiplayer and scoring
 
 @bot.message_handler(func=lambda message: message.text in choices)
 def rpsPlay(message):
@@ -189,7 +201,7 @@ def startDuel(message):
             reply_markup=rpsKeyboard()
         )
 
-#NUMBER GUESS --------------------------------------------------
+# number guess
 
 def guessKeyboard():
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -232,7 +244,8 @@ def guessPlay(message):
         del ranNumber[userID]
         guessWinFlag = True
 
-# SOLS RNG -----------------------------------------
+# chance roll
+# note that a lot of the chance roll functions have "sols" before their name
 
 def solsKeyboard():
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
