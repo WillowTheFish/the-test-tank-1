@@ -1,7 +1,3 @@
-# @fishfishfishthebot
-# run before starting
-# message /start to start
-
 import telebot
 from telebot import types
 import random
